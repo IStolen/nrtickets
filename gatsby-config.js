@@ -5,6 +5,20 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `I like Google fonts`
+  },
+  plugins: [
+    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto`,
+          `source sans pro\:300,400,400i,700` 
+        ],
+        display: 'swap'
+      }
+    }
+  ]
 }
