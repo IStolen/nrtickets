@@ -21,10 +21,11 @@ const stations = [
     },
     ];  
 
-export default class IndexPage extends React.Component {
+export default class WhereForm extends React.Component {
   state = {
     fromStation: "",
     toStation: "",
+    station:"",
   }
 
   handleInputChange = event => {
@@ -39,15 +40,14 @@ export default class IndexPage extends React.Component {
 
   render() {
     return (
-      <form>
         <TextField
-          id="select-from-station"
+          id="station-select"
           select
-          name="fromStation"
-          label="From"
-          value={this.state.fromStation}
+          name="station-select"
+          label={this.props.label}
+          value={this.state.station}
           onChange={this.handleInputChange}
-          helperText="Where are you travelling from?"
+          helperText={this.props.helperText}
         >
           {stations.map((option) => (
             <MenuItem key={option.value} value={option.value}>
@@ -55,23 +55,6 @@ export default class IndexPage extends React.Component {
             </MenuItem>
           ))}
         </TextField>
-        <TextField
-          id="select-from-station"
-          select
-          name="toStation"
-          label="To"
-          value={this.state.toStation}
-          onChange={this.handleInputChange}
-          helperText="Where are you going?"
-        >
-          {stations.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <button type="submit">Submit</button>
-      </form>
     )
   }
 }
