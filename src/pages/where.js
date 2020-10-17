@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
-import WhereForm from "../components/WhereForm";
+import WhereForm from "../components/StationSelector";
 import Layout from "../components/layout"
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import NrButton from '../components/nrbutton'
+import Box from '@material-ui/core/Box'
 
 const styles = {
     height: '60vh',
     textAlign: "center", 
   };
 const section = {
-    height: '20vh',
     backgroundColor: "#255839",
     paddingTop: 5,
     display: 'flex',
@@ -27,29 +26,32 @@ export default function About() {
           <form>
             <div>
               <Grid container style={styles} >
-                <Grid item xs={12} >
-                <Paper style={section} >
-                    <WhereForm 
-                    label="From" 
-                    helperText="where are you travelling from?" 
-                    fieldValue={fromState}
-                    setFieldValue={setFromState}/>
-                </Paper>
+                <Grid item xs={12}>
+                  <Box style={section}>
+                    <h1>Where are you going?</h1>
+                  </Box>
                 </Grid>
                 <Grid item xs={12} >
-                <Paper style={section} >
+                <Box style={section} >
+                    <WhereForm 
+                    label="From" 
+                    fieldValue={fromState}
+                    setFieldValue={setFromState}/>
+                </Box>
+                </Grid>
+                <Grid item xs={12} >
+                  <Box style={section} >
                     <WhereForm 
                     label="To" 
-                    helperText="where do you want to go?"
                     fieldValue={toState}
                     setFieldValue={setToState}
                     />
-                </Paper>
+                  </Box>
                 </Grid>
                 <Grid item xs={12} >
-                <Paper style={section} >
-                    < NrButton type="submit" label='next'>Submit</NrButton>  
-                </Paper>
+                <Box style={section} height='40vh'>
+                    <NrButton type="submit" label='next'>Submit</NrButton>  
+                </Box>
                 </Grid>
                 </Grid>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import { Link } from 'gatsby'
 
 export default function CenteredGrid() {
 
@@ -45,16 +46,16 @@ export default function CenteredGrid() {
     <div style={styles}>
       <Grid container >
         <Grid item xs={12} >
-          <Paper style={section1}><p>Buy ticket</p></Paper>
+          <Box style={section1} component={Link} to='/where'><p>Buy ticket</p></Box>
         </Grid>
         <Grid item xs={12}>
-        <Paper style={section2} ><p>My tickets</p></Paper>
+        <Box style={section2} ><p>My tickets</p></Box>
         </Grid>
         <Grid item xs={12}>
-        <Paper style={section3} ><p>News from NR </p></Paper>
+        <Box style={section3} ><p>News from NR </p></Box>
         </Grid>
         <Grid item xs={12}>
-        <Paper style={section4} ><p>Holiday offers</p></Paper>
+        <Box style={section4} ><p>Holiday offers</p></Box>
         </Grid> 
       </Grid>
     </div>

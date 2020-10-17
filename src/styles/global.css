@@ -1,16 +1,26 @@
-html {
-    background-color: #255839;
-  }
-
 body {
-  font-family: 'Roboto';
+  font-family: "Roboto";
+  background-color: #255839;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #F3FAA0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto";
+  color: #f3faa0;
 }
 
 p {
-  color: #F3FAA0;
+  color: #f3faa0;
   font-size: 36px;
+}
+
+.MuiInputBase-root {
+  background-color: #c4c4c4;
+}
+.MuiFormLabel-root {
+  color: #f3faa0 !important;
 }

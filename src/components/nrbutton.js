@@ -9,6 +9,7 @@ const MyButton = styled(Button)({
   color: '#F3FAA0',
   height: 48,
   padding: '0 30px',
+  width: 208,
 });
 
 export default function NrButton({label}) {

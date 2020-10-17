@@ -15,11 +15,11 @@ const nrtheme = createMuiTheme({
 
 export default function Layout({ children }) {
   return (
-    <ThemeProvider theme={nrtheme}>
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+     <ThemeProvider theme={nrtheme}>
+     <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
       <ButtonAppBar/>
       {children}
     </div>
-    </ThemeProvider>
-  )
+     </ThemeProvider>
+   )
 }

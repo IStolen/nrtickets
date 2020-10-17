@@ -23,25 +23,24 @@ const stations = [
     ];  
 
   const NrSelector = styled(TextField)({
-    background: '#C4C4C4',
-    border: 0,
-    borderRadius: 0,
     color: '#F3FAA0',
-    height: 48,
-    padding: '0 30px',
+    width: '305px'
   });
 
 export default function WhereForm({label, helperText, fieldValue, setFieldValue}) {
   const handleInputChange = event => {
     const target = event.target
     const value = target.value
-    const name = target.name
     setFieldValue(value)
   }
 
 
     return (
         <NrSelector
+          InputLabelProps={{
+            shrink: true,
+            required: true,
+          }}
           id="station-select"
           select
           name="station-select"
@@ -49,7 +48,7 @@ export default function WhereForm({label, helperText, fieldValue, setFieldValue}
           value={fieldValue}
           onChange={handleInputChange}
           helperText={helperText}
-          color='secondary'
+          label-color='secondary'
           size='medium'
         >
           {stations.map((option) => (
