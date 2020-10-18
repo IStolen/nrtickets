@@ -2,13 +2,13 @@ import React from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 
-export default function About() {
+export default function NotFound() {
   return (
     <Layout>
-      <Helmet title='About NR' />
-      <h1>About NR</h1>
+      <Helmet title='NR404' />
+      <h1>OOps</h1>
       <p>
-        NR is a train company that drives trains in Norway
+        Seems something got lost .. check your URL and try again
       </p>
     </Layout>
   )

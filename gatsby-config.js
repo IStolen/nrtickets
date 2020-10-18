@@ -6,9 +6,23 @@
 
 module.exports = {
   siteMetadata: {
-    title: `I like Google fonts`
+    title: `NR tickets`,
+    description: 'Get tickets from Norwegian Rails'
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Norwegian Rail`,
+        short_name: `NR`,
+        start_url: `/`,
+        background_color: `#255839`,
+        theme_color: `#255839`,
+        display: `standalone`,
+        icon: `src/images/nricon.png`, 
+      },
+    },   
     `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-google-fonts`,

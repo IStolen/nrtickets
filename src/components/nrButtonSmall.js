@@ -7,11 +7,11 @@ const MyButton = styled(Button)({
   border: 0,
   borderRadius: 3,
   color: 'Black',
-  height: 50,
   padding: '0 30px',
-  width: 208,
+  width: 123,
+  height: 50,
 });
 
-export default function NrButton({label}) {
+export default function NrButtonSmall({label}) {
   return <MyButton>{label}</MyButton>;
 }

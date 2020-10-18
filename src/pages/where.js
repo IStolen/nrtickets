@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Grid from '@material-ui/core/Grid';
 import NrButton from '../components/nrbutton'
 import Box from '@material-ui/core/Box'
+import { Helmet } from "react-helmet"
 
 const styles = {
     height: '60vh',
@@ -17,18 +18,19 @@ const section = {
     justifyContent: 'center',
   };
 
-export default function About() {
+export default function Where() {
     const [fromState, setFromState] = useState('')
     const [toState, setToState] = useState('')
     return (
         <Layout>
-            From: {fromState} To: {toState}
+          <Helmet title='NR tickets'/>
           <form>
             <div>
+            From: {fromState} To: {toState}
               <Grid container style={styles} >
                 <Grid item xs={12}>
                   <Box style={section}>
-                    <h1>Where are you going?</h1>
+                    <p>Where are you going?</p>
                   </Box>
                 </Grid>
                 <Grid item xs={12} >
@@ -36,7 +38,8 @@ export default function About() {
                     <WhereForm 
                     label="From" 
                     fieldValue={fromState}
-                    setFieldValue={setFromState}/>
+                    setFieldValue={setFromState}
+                    />
                 </Box>
                 </Grid>
                 <Grid item xs={12} >

@@ -41,7 +41,7 @@ export default function WhereForm({label, helperText, fieldValue, setFieldValue}
             shrink: true,
             required: true,
           }}
-          id="station-select"
+          id={label}
           select
           name="station-select"
           label={label}
