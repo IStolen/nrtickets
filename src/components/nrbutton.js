@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Link } from 'gatsby'
 
 const MyButton = styled(Button)({
   background: '#61D08E',
@@ -13,5 +14,5 @@ const MyButton = styled(Button)({
 });
 
 export default function NrButton({label}) {
-  return <MyButton>{label}</MyButton>;
+  return <MyButton><Link textDecoration='none' box-shadow='none' to="/when">{label}</Link></MyButton>;
 }

@@ -22,7 +22,6 @@ const NrPicker = styled(TextField)({
         type={type}
         value={fieldValue}
         onChange={handleInputChange}
-        defaultValue={defaultValue}
         >
     
       </NrPicker>

@@ -24,3 +24,9 @@ p {
 .MuiFormLabel-root {
   color: #f3faa0 !important;
 }
+
+a {
+  text-decoration: none;
+  box-shadow: none;
+  color: black;
+}

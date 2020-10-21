@@ -34,6 +34,7 @@ export default function ButtonAppBar() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
+            <MenuItem onClick={handleClose} component={Link} to='/'>Home</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to='/about'>About nr</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to='/contact'>Contact us</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
