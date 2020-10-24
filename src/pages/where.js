@@ -12,17 +12,15 @@ const styles = {
     height: '60vh',
     textAlign: "center", 
   };
-  const section = {
-    backgroundColor: "#255839",
-    paddingTop: 5,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  };
+const section = {
+  backgroundColor: "#255839",
+  paddingTop: 5,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
   
   export default function Where() {
-  //  const [fromState, setFromState] = useState('')
-  //  const [toState, setToState] = useState('')
     const context = useContext(nrContext)
     console.log(context)
     return (
@@ -58,7 +56,7 @@ const styles = {
                 </Grid>
                 <Grid item xs={12} >
                 <Box style={section} height='40vh'>
-                    <NrButton label='next'>Submit</NrButton> 
+                    <NrButton label='next' to='/when'>Submit</NrButton> 
                 </Box>
                 </Grid>
                 </Grid>

@@ -4,7 +4,7 @@ import withListLoading from '../components/loading';
 import {nrContext} from '../state/nrstore'
 
 export default function ChooseTrip() {
-  const ListLoading = withListLoading(TripList);
+  const TripListLoad = withListLoading(TripList);
   const context = useContext(nrContext) 
   const [appState, setListState] = useState({
     loading: false,
@@ -13,7 +13,7 @@ export default function ChooseTrip() {
 
   useEffect(() => {      
     setListState({ loading: true });
-    const apiUrl = `http://localhost:5000/trips?stationcodeFrom=${context.fromState}&stationcodeTo=TBG`;
+    const apiUrl = `http://localhost:5000/trips?stationcodeFrom=${context.fromState}&stationcodeTo=${context.toState}&timefrom=${context.timeState}`;
     console.log(apiUrl)
     fetch(apiUrl)
       .then((res) => res.json())
@@ -24,7 +24,7 @@ export default function ChooseTrip() {
   
   return (
     <div>
-        <ListLoading isLoading={appState.loading} trips={appState.trips} />
+        <TripListLoad isLoading={appState.loading} trips={appState.trips} />
     </div>
   );
 }

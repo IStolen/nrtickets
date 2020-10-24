@@ -7,7 +7,16 @@ export default function Home() {
   return (
     <Layout>
       <Helmet title='Norwegian Rails' />
-      <CenteredGrid></CenteredGrid>
+      <CenteredGrid
+        to1='/where'
+        to2=''
+        to3=''
+        to4=''
+        label1='Buy Ticket'
+        label2='My tickets'
+        label3='holiday offers'
+        label4='news from NR'
+      />
     </Layout>
   );
 }

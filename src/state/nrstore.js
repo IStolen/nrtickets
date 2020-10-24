@@ -5,7 +5,10 @@ export const nrContext = createContext()
 const NrProvider = ({children}) => {
     const [currTicketSold, setCurrTicketSold] = useState(0)
     const [fromState, setFromState] = useState('TBG')
-    const [toState, setToState] = useState('')
+    const [toState, setToState] = useState('OSL')
+    const [timeState, setTimeState] = useState('06:30')
+    const [dateState, setDateState] = useState('2020-10-24')
+    const [tripIDState, setTripIDState] = useState('nn')    
 
     const store = {
         katt1: 'Gatsby', 
@@ -15,6 +18,12 @@ const NrProvider = ({children}) => {
         setFromState,
         toState,
         setToState,
+        timeState,
+        setTimeState,
+        dateState,
+        setDateState,
+        tripIDState,
+        setTripIDState,
         incrementCurrTicketSold: () => setCurrTicketSold(currTicketSold + 1)
     }
     

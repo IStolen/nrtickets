@@ -13,6 +13,6 @@ const MyButton = styled(Button)({
   width: 208,
 });
 
-export default function NrButton({label}) {
-  return <MyButton><Link textDecoration='none' box-shadow='none' to="/when">{label}</Link></MyButton>;
+export default function NrButton({label, to}) {
+  return <MyButton><Link textDecoration='none' box-shadow='none' to={to} >{label}</Link></MyButton>;
 }

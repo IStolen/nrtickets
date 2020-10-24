@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import Layout from "../components/layout"
 import Grid from '@material-ui/core/Grid';
 import NrButton from '../components/nrbutton'
@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box'
 import { Helmet } from "react-helmet"
 import NrButtonSmall from '../components/nrButtonSmall'
 import { nrContext } from '../state/nrstore'
+
 const styles = {
     height: '60vh',
     textAlign: "cetner", 
@@ -20,8 +21,6 @@ const section = {
   };
 
 export default function When() {
-    const [timeState, setTimeState] = useState('')
-    const [dateState, setDateState] = useState('')
     const context = useContext(nrContext)
     return (
         <Layout>
@@ -30,7 +29,7 @@ export default function When() {
 
           <form>
             <div>
-            From: {timeState} To: {dateState}
+            From: {context.timeState} To: {context.dateState}
               <Grid container style={styles} >
                 <Grid item xs={12}>
                   <Box style={section}>
@@ -39,12 +38,12 @@ export default function When() {
                 </Grid>
                 <Grid item xs={6} >
                   <Box style={section} height='20vh'>
-                    <NrButtonSmall label='depart'>Depart</NrButtonSmall> 
+                    <NrButtonSmall label='depart' to=''>Depart</NrButtonSmall> 
                   </Box>
                 </Grid>
                 <Grid item xs={6} >
                   <Box style={section} height='20vh'>
-                    <NrButtonSmall label='arrive'>Arrive</NrButtonSmall>
+                    <NrButtonSmall label='arrive' to=''>Arrive</NrButtonSmall>
                   </Box>
                 </Grid>
                 <Grid item xs={6} >
@@ -52,8 +51,8 @@ export default function When() {
                     <NrPicker 
                       label='time' 
                       type='time' 
-                      fieldValue={timeState}
-                      setFieldValue={setTimeState}
+                      fieldValue={context.timeState}
+                      setFieldValue={context.setTimeState}
                       >     
                     </NrPicker>  
                   </Box>
@@ -63,14 +62,14 @@ export default function When() {
                     <NrPicker 
                       label='date' 
                       type='date' 
-                      fieldValue={dateState}
-                      setFieldValue={setDateState}>                        
+                      fieldValue={context.dateState}
+                      setFieldValue={context.setDateState}>                        
                     </NrPicker>  
                   </Box>
                 </Grid>
                 <Grid item xs={12} >
                   <Box style={section} height='20vh'>
-                    <NrButton type="submit" label='next'>Submit</NrButton>  
+                    <NrButton to='/choose' label='next'>Submit</NrButton>  
                   </Box>
                 </Grid>
               </Grid>
