@@ -1,8 +1,7 @@
 import React, { useState, createContext } from 'react'
 
-
 export const nrContext = createContext()
-const NrProvider = ({children}) => {
+const NrProvider = ({ children }) => {
     const [currTicketSold, setCurrTicketSold] = useState(0)
     const [fromState, setFromState] = useState('TBG')
     const [toState, setToState] = useState('OSL')
@@ -12,7 +11,7 @@ const NrProvider = ({children}) => {
     const [bookingIDState, setBookingIDState] = useState('')
 
     const store = {
-        katt1: 'Gatsby', 
+        katt1: 'Gatsby',
         kattone: 'Linux',
         currTicketSold,
         fromState,
@@ -29,7 +28,7 @@ const NrProvider = ({children}) => {
         setBookingIDState,
         incrementCurrTicketSold: () => setCurrTicketSold(currTicketSold + 1)
     }
-    
+
     return (
         <nrContext.Provider value={store}>
             {children}
@@ -37,4 +36,4 @@ const NrProvider = ({children}) => {
     )
 }
 
-export default ({element}) => <NrProvider>{element}</NrProvider>
+export default ({ element }) => <NrProvider>{element}</NrProvider>

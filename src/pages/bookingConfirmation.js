@@ -1,17 +1,18 @@
-import React, { useContext }from 'react';
-import {nrContext} from '../state/nrstore'
-import RequestPost from '../components/bookingRequest'
+import React, { useContext, useEffect, useState } from 'react';
+import { nrContext } from '../state/nrstore'
+import { requestPost } from '../components/bookingRequest'
 
 export default function RequestBooking() {
-  
+  const [result, setResult] = useState('')
   const context = useContext(nrContext)
-  const apiUrl = `http://localhost:5000/bookingrequest?bookingID=${context.bookingIDState}&tripnr=${context.tripIDState}&date=${context.dateState}`;
-  const Jan = RequestPost(apiUrl)
-
+  useEffect(() => {
+    const apiUrl = `http://localhost:5000/bookingrequest?bookingID=${context.bookingIDState}&tripnr=${context.tripIDState}&date=${context.dateState}`;
+    requestPost(apiUrl, setResult)
+  }, [])
   return (
     <div>
-      <p>post done</p>
-      <p>{Jan}</p>
+      <p>Ticket ordered successfully</p>
+      <p>{result}</p>
     </div>
   );
 }
