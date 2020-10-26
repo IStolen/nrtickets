@@ -1,32 +1,17 @@
-import React, { useContext, useState }from 'react';
+import React, { useContext }from 'react';
 import {nrContext} from '../state/nrstore'
+import RequestPost from '../components/bookingRequest'
 
-
-export default function ChooseTrip() {
-  const context = useContext(nrContext)
-  const [responseState, setResponseState] = useState('')
-  const apiUrl = `http://localhost:5000/bookingrequest?tripnr=${context.tripIDState}`;
-  fetch(apiUrl, 
-  {
-    method: 'POST',
-    headers: 
-    {
-      'Content-Type': 'text/html; charset=utf-8'
-    },
-  }).then((response) =>
-  {
-    return response.text()
-  }).then((data) =>
-  {
-    console.log(data)
-    setResponseState(data)
-  })
-  ; 
+export default function RequestBooking() {
   
+  const context = useContext(nrContext)
+  const apiUrl = `http://localhost:5000/bookingrequest?bookingID=${context.bookingIDState}&tripnr=${context.tripIDState}&date=${context.dateState}`;
+  const Jan = RequestPost(apiUrl)
+
   return (
     <div>
       <p>post done</p>
-      <p>{responseState}</p>
+      <p>{Jan}</p>
     </div>
   );
 }

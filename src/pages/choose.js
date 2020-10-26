@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import TripList from '../components/TripList';
 import withListLoading from '../components/loading';
 import {nrContext} from '../state/nrstore'
+import uuid from 'uuid'
 
 export default function ChooseTrip() {
   const TripListLoad = withListLoading(TripList);
@@ -15,6 +16,7 @@ export default function ChooseTrip() {
     setListState({ loading: true });
     const apiUrl = `http://localhost:5000/trips?stationcodeFrom=${context.fromState}&stationcodeTo=${context.toState}&timefrom=${context.timeState}`;
     console.log(apiUrl)
+    context.setBookingIDState(uuid.v4())
     fetch(apiUrl)
       .then((res) => res.json())
       .then((trips) => {

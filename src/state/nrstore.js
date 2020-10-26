@@ -8,7 +8,8 @@ const NrProvider = ({children}) => {
     const [toState, setToState] = useState('OSL')
     const [timeState, setTimeState] = useState('06:30')
     const [dateState, setDateState] = useState('2020-10-24')
-    const [tripIDState, setTripIDState] = useState('nn')    
+    const [tripIDState, setTripIDState] = useState('nn')
+    const [bookingIDState, setBookingIDState] = useState('')
 
     const store = {
         katt1: 'Gatsby', 
@@ -24,6 +25,8 @@ const NrProvider = ({children}) => {
         setDateState,
         tripIDState,
         setTripIDState,
+        bookingIDState,
+        setBookingIDState,
         incrementCurrTicketSold: () => setCurrTicketSold(currTicketSold + 1)
     }
     
