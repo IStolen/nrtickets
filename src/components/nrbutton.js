@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby'
 
 const StyledLink = styled(Link)({

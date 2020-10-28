@@ -9,6 +9,8 @@ const NrProvider = ({ children }) => {
     const [dateState, setDateState] = useState('2020-10-24')
     const [tripIDState, setTripIDState] = useState('nn')
     const [bookingIDState, setBookingIDState] = useState('')
+    const [ticketNoState, setTicketNoState] = useState('')
+
 
     const store = {
         katt1: 'Gatsby',
@@ -26,6 +28,8 @@ const NrProvider = ({ children }) => {
         setTripIDState,
         bookingIDState,
         setBookingIDState,
+        ticketNoState,
+        setTicketNoState,
         incrementCurrTicketSold: () => setCurrTicketSold(currTicketSold + 1)
     }
 
