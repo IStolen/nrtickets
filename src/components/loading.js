@@ -5,7 +5,7 @@ function WithListLoading(Component) {
     if (!isLoading) return <Component {...props} />;
     return (
       <p style={{ textAlign: 'center', fontSize: '30px' }}>
-        Hang on, we are just getting things ready for you :)
+        Hang on, we are just getting things ready for you 🐱‍🏍
       </p>
     );
   };

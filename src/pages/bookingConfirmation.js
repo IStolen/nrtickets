@@ -11,7 +11,7 @@ export default function RequestBooking() {
   }, [])
   return (
     <div>
-      <p>Ticket ordered successfully</p>
+      <p>Order submitted, awaiting feedback from Payment provider</p>
       <p>{result}</p>
     </div>
   );

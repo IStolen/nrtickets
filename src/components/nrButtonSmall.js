@@ -5,11 +5,19 @@ import { Link } from 'gatsby'
 const StyledLink = styled(Link)({
   background: '#61D08E',
   border: 0,
-  borderRadius: 3,
+  borderRadius: 10,
   color: 'Black',
-  padding: '0 30px',
-  width: 123,
-  height: 50,
+  padding: '15px 30px',
+  margin: '30px',
+  boxShadow: '3px 3px 3px #173623',
+  textTransform: 'capitalize',
+  transition: 'transform 150ms',
+  '&:hover': {
+    transform: 'translate3d(0, -2px, 0)'
+  },
+  '&:active': {
+    transform: 'translate3d(0, 2px, 0)'
+  }
 });
 
 export default function NrButtonSmall({ label, to }) {
