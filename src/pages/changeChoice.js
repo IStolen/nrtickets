@@ -12,10 +12,9 @@ export default function ChooseChange() {
   useEffect(() => {
     const apiUrl = `http://localhost:5000//getbooking?bookingID=${context.ticketNoState}`;
     fetch(apiUrl)
-    fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => {
-        setResult(data.pop());
+        setResult(data);
       });
   }, []);
 
@@ -26,7 +25,6 @@ export default function ChooseChange() {
   return (
     <Layout>
       <Helmet title='NR tickets' />
-      <p>{context.ticketNoState}</p>
       <div>
         <p>
           You have a ticket from {result.stationnameFrom} to {result.stationnameTo} at {result.timefrom} on {result.date}

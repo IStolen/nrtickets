@@ -23,7 +23,6 @@ export default function WhenForm({ to }) {
     return (
         <form>
             <div>
-                From: {context.toState} To: {context.dateState}
                 <Grid container style={styles} >
                     <Grid item xs={12}>
                         <Box style={section}>

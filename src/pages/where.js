@@ -26,10 +26,8 @@ export default function Where() {
   return (
     <Layout>
       <Helmet title='NR tickets' />
-      <button onClick={() => context.incrementCurrTicketSold()}>Hey sann {context.katt1} {context.currTicketSold} </button>
       <form>
         <div>
-          From: {context.fromState} To: {context.toState}
           <Grid container style={styles} >
             <Grid item xs={12}>
               <Box style={section}>

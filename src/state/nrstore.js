@@ -2,7 +2,6 @@ import React, { useState, createContext } from 'react'
 
 export const nrContext = createContext()
 const NrProvider = ({ children }) => {
-    const [currTicketSold, setCurrTicketSold] = useState(0)
     const [fromState, setFromState] = useState('TBG')
     const [toState, setToState] = useState('OSL')
     const [timeState, setTimeState] = useState('06:30')
@@ -13,9 +12,6 @@ const NrProvider = ({ children }) => {
 
 
     const store = {
-        katt1: 'Gatsby',
-        kattone: 'Linux',
-        currTicketSold,
         fromState,
         setFromState,
         toState,
@@ -30,7 +26,6 @@ const NrProvider = ({ children }) => {
         setBookingIDState,
         ticketNoState,
         setTicketNoState,
-        incrementCurrTicketSold: () => setCurrTicketSold(currTicketSold + 1)
     }
 
     return (

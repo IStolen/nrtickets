@@ -3,7 +3,7 @@
   </a>
 </p>
 <h1 align="center">
-  ACIT 4070 exam project - prototype ticketing system
+  ACIT 4070 exam project - prototype ticketing system frontend
 </h1>
 
 ## 🚀 Start it up

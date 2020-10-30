@@ -10,11 +10,11 @@ export default function Home() {
       <CenteredGrid
         to1='/where'
         to2=''
-        to3=''
+        to3='/change'
         to4=''
         label1='Buy Ticket'
         label2='My tickets'
-        label3='holiday offers'
+        label3='Change a ticket'
         label4='news from NR'
       />
     </Layout>

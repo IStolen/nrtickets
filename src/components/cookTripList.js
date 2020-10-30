@@ -4,7 +4,7 @@ import withListLoading from './loading';
 import { nrContext } from '../state/nrstore'
 import uuid from 'uuid'
 
-export default function ChooseTrip() {
+export default function ChooseTrip({ redirectTo }) {
     const TripListLoad = withListLoading(TripList);
     const context = useContext(nrContext)
     const [appState, setListState] = useState({
@@ -25,7 +25,7 @@ export default function ChooseTrip() {
 
     return (
         <div>
-            <TripListLoad isLoading={appState.loading} trips={appState.trips} />
+            <TripListLoad isLoading={appState.loading} trips={appState.trips} to={redirectTo} />
         </div>
     );
 }

@@ -6,8 +6,8 @@ import Box from '@material-ui/core/Box';
 
 
 
-export default function TripList(props, to) {
-  const { trips: trip } = props;
+export default function TripList(props) {
+  const { trips: trip, to } = props;
   const context = useContext(nrContext)
 
   console.log(to)
@@ -25,7 +25,7 @@ export default function TripList(props, to) {
   function PassBooking(trip) {
     context.setTripIDState(trip)
     console.log(trip)
-    navigate('/editconfirmation')
+    navigate(to)
   }
 
   if (!trip || trip.length === 0) return <p>Sorry, we have no available journeys at your chosen time and date</p>;
@@ -35,12 +35,12 @@ export default function TripList(props, to) {
       {trip.map((trip) => {
         return (
           <Box style={{ margin: `3rem auto`, maxWidth: 650, padding: `2`, alignItems: 'center', justifyContent: 'center' }}>
-            <li key={trip.tripID} className='list'>
+            <li key={trip.tripID} className='list' style={{ backgroundColor: "#428a5e", padding: '5px 15px', borderRadius: 10 }}>
               <span className='station-from'>{trip.stationnameFrom} - </span>
               <span className='station-to'>{trip.stationnameTo} - </span>
               <span className='time-from'>{trip.timefrom} - </span>
               <span className='time-to'>{trip.timeto} - </span>
-              <span className='price'>{trip.price} NOK  </span>
+              <span className='price'>{trip.price} NOK       </span>
               <Button onClick={() => PassBooking(trip.tripID)} style={buttonStyles} label='book'>Book</Button>
             </li>
           </Box>
