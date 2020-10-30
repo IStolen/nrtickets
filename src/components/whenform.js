@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box'
 import NrButtonSmall from '../components/nrButtonSmall'
 import { nrContext } from '../state/nrstore'
 
+
 const styles = {
     height: '60vh',
     textAlign: "cetner",
