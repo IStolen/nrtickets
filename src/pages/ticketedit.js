@@ -5,10 +5,10 @@ import { Helmet } from "react-helmet"
 
 export default function tripPicker() {
 
-  return (
-    <Layout>
-      <Helmet title='NR tickets' />
-      <ChooseTrip />
-    </Layout>
-  )
+    return (
+        <Layout>
+            <Helmet title='NR tickets' />
+            <ChooseTrip />
+        </Layout>
+    )
 }

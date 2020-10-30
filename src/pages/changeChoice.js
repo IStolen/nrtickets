@@ -26,11 +26,12 @@ export default function ChooseChange() {
   return (
     <Layout>
       <Helmet title='NR tickets' />
+      <p>{context.ticketNoState}</p>
       <div>
         <p>
           You have a ticket from {result.stationnameFrom} to {result.stationnameTo} at {result.timefrom} on {result.date}
         </p>
-        <WhenForm to='/choose' />
+        <WhenForm to='/ticketedit' />
       </div>
     </Layout>
   );
