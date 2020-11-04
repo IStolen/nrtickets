@@ -8,7 +8,7 @@ export default function tripPicker() {
   return (
     <Layout>
       <Helmet title='NR tickets' />
-      <ChooseTrip redirectTo='/prototypePaymentPlaceholder' />
+      <ChooseTrip redirectTo='/seatpicker' />
     </Layout>
   )
 }

@@ -30,3 +30,16 @@ a {
   box-shadow: none;
   color: black;
 }
+
+.nrSeatButton {
+  background: white;
+  border: none;
+
+}
+.nrSeatButton.selected {
+  background: yellow;
+}
+.nrSeatButton.reserved {
+  background: grey;
+  pointer-events: none;
+}
