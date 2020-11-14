@@ -32,14 +32,17 @@ a {
 }
 
 .nrSeatButton {
-  background: white;
   border: none;
-
 }
-.nrSeatButton.selected {
-  background: yellow;
+.nrSeatButton svg {
+  color: black;
+}
+.nrSeatButton.selected svg {
+  color: orangered;
 }
 .nrSeatButton.reserved {
-  background: grey;
-  pointer-events: none;
+    pointer-events: none;
+}
+.nrSeatButton.reserved svg {
+  color: grey;
 }
