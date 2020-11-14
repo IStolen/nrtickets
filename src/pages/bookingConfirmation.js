@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 
 export default function RequestBooking() {
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState(false)
   const context = useContext(nrContext)
   useEffect(() => {
     const apiUrl = `http://localhost:5000/bookingrequest?bookingID=${context.bookingIDState}&tripnr=${context.tripIDState}&date=${context.dateState}`;
@@ -17,6 +17,9 @@ export default function RequestBooking() {
       <div>
         <p>Order submitted, awaiting feedback from Payment provider</p>
         <p>{result}</p>
+        {result && <p>Your ticket number is: </p>}
+        {result && <p>{context.bookingIDState}</p>}
+        {result && <p>Keep this number, you will need it if you want to change your ticket. </p>}
       </div>
     </Layout>
   );
