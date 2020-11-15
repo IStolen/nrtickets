@@ -2,12 +2,31 @@ import React, { useEffect, useState, useContext } from 'react'
 import { nrContext } from '../state/nrstore'
 import { requestPost } from '../components/bookingRequest'
 import { navigate } from 'gatsby'
-import NrButton from './nrbutton'
 import EventSeatIcon from '@material-ui/icons/EventSeat';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import { styled } from '@material-ui/core/styles';
+import NrButton from './nrbutton';
+
+const StyledButton = styled(Button)({
+    background: '#61D08E',
+    border: 2,
+    borderRadius: 10,
+    color: 'Black',
+    padding: '15px 30px',
+    margin: '30px',
+    boxShadow: '3px 3px 3px #173623',
+    textTransform: 'capitalize',
+    transition: 'transform 150ms',
+    '&:hover': {
+        transform: 'translate3d(0, -2px, 0)'
+    },
+    '&:active': {
+        transform: 'translate3d(0, 2px, 0)'
+    }
+});
 
 export default function SetSeatMap() {
     const context = useContext(nrContext)
@@ -69,7 +88,8 @@ export default function SetSeatMap() {
                     })}
                 </Box>
             </Paper>
-            <button onClick={() => submitSeatBooking()}  >Next</button>
+            <StyledButton onClick={() => submitSeatBooking()} >Book this seat NOK 100,- additional charge</StyledButton>
+            <NrButton label='continue without seat booking' to='/prototypePaymentPlaceholder' />
         </Box>
 
     )

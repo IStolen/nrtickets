@@ -3,6 +3,7 @@ import { nrContext } from '../state/nrstore'
 import { requestPost } from '../components/bookingRequest'
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
+import spinner from '../gifs/spinner.gif'
 
 export default function RequestBooking() {
   const [result, setResult] = useState(false)
@@ -15,7 +16,8 @@ export default function RequestBooking() {
     <Layout>
       <Helmet title='NR tickets' />
       <div>
-        <p>Order submitted, awaiting feedback from Payment provider</p>
+        {!result && <p>Order submitted, awaiting feedback from Payment provider</p>}
+        {!result && <img src={spinner} alt="spinner illustrating wait time" />}
         <p>{result}</p>
         {result && <p>Your ticket number is: </p>}
         {result && <p>{context.bookingIDState}</p>}
