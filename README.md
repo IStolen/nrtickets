@@ -18,6 +18,9 @@
 
     $gatsby develop
 
+note that it will not work without also starting the backend, see 
+https://github.com/IStolen/nrBackend
+
 **Have a look**
 
     The site is now running at `http://localhost:8000`!

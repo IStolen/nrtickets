@@ -8,7 +8,7 @@ const NrProvider = ({ children }) => {
     const [dateState, setDateState] = useState('2020-10-24')
     const [tripIDState, setTripIDState] = useState('nn')
     const [bookingIDState, setBookingIDState] = useState('')
-    const [ticketNoState, setTicketNoState] = useState('5cd058a5-ba7c-42ee-a2c7-77666')
+    const [ticketNoState, setTicketNoState] = useState('')
 
 
     const store = {
